@@ -1,0 +1,396 @@
+/*background*/
+body {
+  margin: 0;
+  background-image: url('Pictures/anotherprick.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+/*top bar*/
+.top-bar {
+  margin: auto;
+  margin-top: 20px;
+  height: 100px;
+  max-width: 60%;
+  background-color: rgba(255, 255, 255, 0.801);
+  border-style: solid;
+  border-width: 3px;
+  display: flex;
+}
+
+.top-bar img {
+  width: 90px;
+  height: 90px;
+  margin-left: 30px;
+}
+
+.home-link {
+  text-decoration: none;
+}
+
+.header {
+  font-size: 50px;
+  margin: auto;
+  padding: 20px;
+  text-align: left;
+  margin-left: 0;
+  font-weight: bold;
+  display: flex;
+  color: rgb(42, 61, 169);
+}
+
+/*search bar and results*/
+.tupperware {
+  margin: auto;
+  background-color: rgba(36, 37, 41, 0.842);
+  max-width: 60%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  border-style: solid;
+  border-width: 3px;
+  border-top: none;
+}
+
+/*search bar*/
+.search {
+  position: relative;
+  display: flex;
+  width: 40%;
+  margin: auto;
+}
+
+#animetitle {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: grey;
+  font-size: medium;
+  padding-left: 20px;
+}
+
+#animetitle:hover, #animetitle:active {
+  color: black;
+}
+#searchbutton {
+  width: 40px;
+  height: 50px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+}
+
+#searchbutton i{
+  color: white;
+}
+
+/*results*/
+#resultContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.result-card {
+  padding-top: 10px;
+  margin: auto;
+}
+
+.animeimg{
+  height: 300px;
+  width: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.img-txt {
+  width: 200px;
+  height: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+/*modal*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 50px;
+  border: 1px solid #888;
+  width: 65%; /* Could be more or less, depending on screen size */
+  background-color: rgb(36, 37, 41);
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.split{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+/*modal style*/
+.pic {
+  margin: auto;
+  width: 325px;
+  object-fit: cover;
+}
+
+.top-part {
+  text-align: left;
+}
+
+.top-part ul, .top-part li {
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 5px;
+}
+
+.en_name, .jp_name, .gList, .plot{
+  text-align: left;
+  padding-bottom: 1%;
+}
+
+.en_name {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.jp_name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.gList {
+  font-style: italic;
+}
+
+.plot {
+  word-spacing: 2px;
+  line-height: 1.6;
+  padding-top: 20px;
+}
+
+/*close*/
+#close {
+  height: 40px;
+  width: 50px;
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0);
+  color: grey;
+  border: none;
+  outline: none;
+}
+
+#close:active, #close:hover {
+  color: whitesmoke;
+  -webkit-transform: translate(0px, 5px);
+  transition: all 1s ease;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.img-txt:hover, .img-txt:active, .animeimg:hover, .animeimg:active {
+  cursor: pointer;
+}
+
+.mButton {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+/*MEDIA QUERY TO ADJUST ELEMENTS when screen size is affected*/
+@media only screen and (max-width: 610px) {
+  /*front page*/
+  .top-bar{
+    padding-top: 5px;
+    height: 60px;
+  }
+  .header{
+    font-size: 25px;
+    padding: 0;
+    padding-top: 15px;
+    
+  }
+  .home-link img{
+    width: 50px;
+    height:50px;
+  }
+
+  .search{
+    width:90%;
+  }
+  /*modal*/
+  .modal-content{
+    flex-direction: column;
+  }
+
+  .pic{
+    width:auto;
+  }
+}
+
+@media only screen and (max-width: 700px){
+    /*modal*/
+    .modal-content{
+      flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 850px){
+  /*modal*/
+  .modal-content{
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 900px){
+  /*modal*/
+  .modal-content{
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 1300px){
+  /*modal*/
+  .modal-content{
+    flex-direction: column;
+  }
+  .pic{
+    margin:0;
+    display: block;
+    margin: auto;
+  }
+}
+/*
+@media screen and (min-width:270px) and (max-width:450px){
+  .container { 
+    width: 60%; 
+  } 
+
+  .information img {  
+    width:150px; 
+    margin:auto;  
+  }
+
+  .information{
+    width:100%;
+    margin:auto;
+  }
+
+  .movie-title{
+    font-size:25px;
+  }
+
+  input{
+    font-size:15px;
+  }
+
+  .fa.fa-search{
+    top:10px;
+    font-size:18px;
+  }
+  .wrapper{
+    width: 100%;
+    margin-top: 60px;
+  }
+  #about-div{
+    margin-top: 60px;
+  }
+  .logo img{
+    width:170px;
+  }
+  #about-btn{
+    top:35px;
+    font-size:13px;
+    right:10px;
+  }
+
+}
+
+@media screen and (min-width:450px) and (max-width:540px){
+  .container { 
+    width: 70%; 
+  } 
+  .information img {
+    width:200px;
+  }
+
+  .information{
+    width:100%;
+  }
+  .wrapper{
+    width: 100%;
+    margin-top: 60px;
+  }
+  #about-div{
+    margin-top: 60px;
+  }
+}
+
+
+@media screen and (min-width:540px) and (max-width:740px){
+  .container { 
+    width: 70%; 
+  } 
+  .wrapper{
+    width: 100%;
+    margin-top: 60px;
+  }
+  #fav-modal{
+    margin-top:70px;
+  }
+  #about-div{
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width:1500px){
+  .modal-content {
+    flex-direction: column;
+  }
+}
+*/
